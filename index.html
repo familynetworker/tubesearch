@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tube Search · Copy What’s Already Working</title>
+<meta name="description" content="Tube Search finds the small YouTube channels blowing up right now, shows you exactly why, and helps you make your own version. Faceless or on camera, beginner or pro. Tools, training and a community.">
+<meta property="og:title" content="Tube Search · Copy what’s already working">
+<meta property="og:description" content="Find the small channels blowing up right now, see why they work, and make your own version. Tools, training and a community.">
+<meta property="og:image" content="img/wall/w07.webp">
+<meta name="theme-color" content="#0D0420">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23F0ABFC'/%3E%3Cstop offset='1' stop-color='%23A855F7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M25 19l22 13-22 13z' fill='%230D0420'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Fredoka:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Caveat:wght@600;700&family=Bebas+Neue&family=Special+Elite&family=Cinzel:wght@700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Orbitron:wght@700;900&family=Rajdhani:wght@600;700&family=Cormorant+Garamond:ital,wght@1,600&family=Anton&family=Bungee&family=Permanent+Marker&family=VT323&family=Inter:wght@200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css?v=4x">
+<link rel="stylesheet" href="css/trek.css?v=4x">
+<link rel="stylesheet" href="css/v4.css?v=4x">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<div class="sky"></div><canvas id="stars" aria-hidden="true"></canvas><div id="prog"></div><div class="grain"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="hfGoo"><feGaussianBlur in="SourceGraphic" stdDeviation="12" result="b"/><feColorMatrix in="b" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -9"/></filter>
+  <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0ABFC"/><stop offset="1" stop-color="#A855F7"/></linearGradient>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-3-6.7L21 8"/><path d="M21 3v5h-5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2 6-6 2 2-6z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 012-2h2M17 3h2a2 2 0 012 2v2M21 17v2a2 2 0 01-2 2h-2M7 21H5a2 2 0 01-2-2v-2"/><path d="M7 12h10"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-5-5-7-5-12-3 2-5 5-5 8-1-1-2-2-2-4-2 2-2 5-2 8 0 4 3 7 7 7z"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0012 2z"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M14 4c3-1 6-1 6-1s0 3-1 6l-7 7-5-5z"/><path d="M9 9H5l-2 3h5M15 15v4l-3 2v-5"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0014 0M12 17v5"/></symbol>
+  <symbol id="i-cut" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></symbol>
+  <symbol id="i-dollar" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M22 8l-6 4 6 4z"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 14h.01M15 14h.01"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5z"/><rect x="1" y="5" width="15" height="14" rx="2"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></symbol>
+</defs></svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Tube Search home"><b><svg viewBox="0 0 24 24"><path d="M7 4l14 8-14 8z"/></svg></b>Tube Search</a>
+    <nav class="nav-links" aria-label="Main"><a href="#ch1">How it works</a><a href="#get">What you get</a><a href="#oncam">On camera</a><a href="#community">Community</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+    <div class="nav-cta"><a class="btn btn-g btn-s" data-m="/login" href="https://tubesearch-members.tubesearch.workers.dev/login">Log in</a><a class="btn btn-b btn-s" href="#pricing">Get started</a></div>
+    <button class="burger" aria-label="Open the menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mnav" aria-label="Phone menu"><a href="#ch1">How it works</a><a href="#get">What you get</a><a href="#oncam">On camera</a><a href="#community">Community</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a data-m="/login" href="https://tubesearch-members.tubesearch.workers.dev/login">Log in</a><a class="btn btn-b" href="#pricing">Get started</a></nav>
+
+<nav class="jump" id="jump" aria-label="Jump to a section"><a href="#ch1">Find</a><a href="#get">Tools</a><a href="#ch3">Make</a><a href="#studio">Studio</a><a href="#ch4">Grow</a><a href="#oncam">On camera</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+<main id="main">
+<!-- HERO -->
+<section class="thero" id="top">
+  <div class="scene sc1" aria-hidden="true">
+    <div class="wall"><div class="wplane"><div class="wgrid"><div class="tile"><img src="https://i.ytimg.com/vi/eQryUeIv3ow/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">GIRL TALK</span></div><div class="tile"><img src="https://i.ytimg.com/vi/BfZYFZ1gTpE/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Marvin Achi</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/AfaIN0t1J2A/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">174 days old · 3.2M/mo</span><span class="cn">Travel Lifestyle</span></div><div class="tile"><img src="https://i.ytimg.com/vi/c58LOv0VCxQ/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">STAYAWAKE - Crime &amp; Psychology</span></div><div class="tile"><img src="https://i.ytimg.com/vi/ZOjVzqFqjW0/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">All The Gear</span></div><div class="tile"><img src="https://i.ytimg.com/vi/BRESQ8NX-us/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">ErikDoesVFX</span></div><div class="tile"><img src="https://i.ytimg.com/vi/7HF92d0X3Jc/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">nikola’s pilates</span></div><div class="tile"><img src="https://i.ytimg.com/vi/xg8ieJQIB70/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Sleepy Science Channel</span></div><div class="tile"><img src="https://i.ytimg.com/vi/OIPDOFsQcCM/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Bunch of Friends</span></div><div class="tile"><img src="https://i.ytimg.com/vi/B32enfrhPzg/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Kayla</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/e7ki7bSIauY/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">117 days old · 9.6M/mo</span><span class="cn">HypnoPhysics</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/aT9KKgyRhKM/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">48 days old · 2.1M/mo</span><span class="cn">Shelter Line</span></div><div class="tile"><img src="https://i.ytimg.com/vi/DzvbeUzY5zg/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Nico Polo</span></div><div class="tile"><img src="https://i.ytimg.com/vi/gT66JQYWdZE/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Chat History Compilations</span></div><div class="tile"><img src="https://i.ytimg.com/vi/ZK7LZq4m8R4/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Jando</span></div><div class="tile"><img src="https://i.ytimg.com/vi/2k3w_XHRd1s/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Textify</span></div><div class="tile"><img src="https://i.ytimg.com/vi/hs0xo7lteQs/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">StrawHatMidas</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/8IDSe2S5hkw/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">85 days old · 4.8M/mo</span><span class="cn">Dr. Ares Senior</span></div><div class="tile"><img src="https://i.ytimg.com/vi/cjITrk93MqM/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Britt and Drew</span></div><div class="tile"><img src="https://i.ytimg.com/vi/0TbUwJMgMCs/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">eslis</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/xFdd-i4eo8w/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">81 days old · 2.3M/mo</span><span class="cn">Mama Pearline</span></div><div class="tile"><img src="https://i.ytimg.com/vi/QLdQXKm9EFE/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">The Good, The Bad &amp; The Football</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/ldGS4hWcHgw/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">103 days old · 3.6M/mo</span><span class="cn">Yucky Stew</span></div><div class="tile"><img src="https://i.ytimg.com/vi/S1qmLwSpRAg/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">WSM</span></div><div class="tile"><img src="https://i.ytimg.com/vi/3J_miNIpmtc/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Deep Space News</span></div><div class="tile"><img src="https://i.ytimg.com/vi/tquErGz0f-o/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Stay Wild Reacts</span></div><div class="tile"><img src="https://i.ytimg.com/vi/jU1y-kI2NvU/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">The moving soul of the Carpathian heritage</span></div><div class="tile"><img src="https://i.ytimg.com/vi/ytrtFsXRXGY/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Kai Trump</span></div><div class="tile"><img src="https://i.ytimg.com/vi/4isNf8ZNwPk/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">CONO</span></div><div class="tile"><img src="https://i.ytimg.com/vi/VVvVSAn_g2E/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">MIKEY &amp; WYATT</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/fPN5u8nUJRk/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">313 days old · 4.7M/mo</span><span class="cn">Mind Palace</span></div><div class="tile"><img src="https://i.ytimg.com/vi/NQ_oQPZ5cuY/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Celebrity Substitute</span></div><div class="tile"><img src="https://i.ytimg.com/vi/l7i86kCqaZg/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">RAR Garage</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/UPsolClJ-hE/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">105 days old · 3.3M/mo</span><span class="cn">KadrathReforged</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/RWdyANQ-rXc/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">25 days old · 3.6M/mo</span><span class="cn">Below The Map</span></div><div class="tile"><img src="https://i.ytimg.com/vi/ohuh-oRrhMk/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">FNCS Pickaxe</span></div><div class="tile"><img src="https://i.ytimg.com/vi/0K-OcgzX-6Y/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">B N S</span></div><div class="tile"><img src="https://i.ytimg.com/vi/41dD-N5-3no/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Paul Warburg</span></div><div class="tile"><img src="https://i.ytimg.com/vi/WdGR3cfB5g8/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Grandma Edith Cooks</span></div><div class="tile"><img src="https://i.ytimg.com/vi/kw2e7fMshCA/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">ARAD</span></div><div class="tile"><img src="https://i.ytimg.com/vi/Si5jAkq-rgM/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Extra Medium Stuff</span></div><div class="tile"><img src="https://i.ytimg.com/vi/Xzo5witfaW0/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Kay B Chung</span></div><div class="tile"><img src="https://i.ytimg.com/vi/Ks-qwP5mTIw/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">MashtagBrady2.0</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/kNzMbkOPOgM/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">255 days old · 45.9M/mo</span><span class="cn">OverTales</span></div><div class="tile"><img src="https://i.ytimg.com/vi/eqCNMbcsXWo/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">BOAT BUSTERS</span></div><div class="tile"><img src="https://i.ytimg.com/vi/1MOY2iXOh3U/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Lesnoy Speed</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/d_uAsoejDK0/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">47 days old · 8.7M/mo</span><span class="cn">Bodycam C4</span></div><div class="tile"><img src="https://i.ytimg.com/vi/g8ZTNPlkZQw/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">MindsetVibrations</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/Gwdhz64bQ3E/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">55 days old · 3.4M/mo</span><span class="cn">RELIC ORIGINS</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/ij9z85WeRH8/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">22 days old · 3.8M/mo</span><span class="cn">Bodycam Sins</span></div><div class="tile"><img src="https://i.ytimg.com/vi/B5Lp_muhV3c/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Chad Chad Chad</span></div><div class="tile"><img src="https://i.ytimg.com/vi/gjrypnIcxEE/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Tiger A. Smith</span></div><div class="tile"><img src="https://i.ytimg.com/vi/UzVu5sa3UEo/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">elialody</span></div><div class="tile"><img src="https://i.ytimg.com/vi/fKkyLwNiQ1Q/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Zac Rios</span></div><div class="tile"><img src="https://i.ytimg.com/vi/2mQqFcqvHgk/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Shania and Eddie</span></div><div class="tile"><img src="https://i.ytimg.com/vi/EWneVjsqkBg/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Clovr Cards</span></div><div class="tile"><img src="https://i.ytimg.com/vi/rBZ0BeMhEmQ/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Kindly Sleepin&#x27;</span></div><div class="tile"><img src="https://i.ytimg.com/vi/pFiPJ9oO-To/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">CaylusBlox</span></div><div class="tile"><img src="https://i.ytimg.com/vi/YLO7tCdBVrA/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">PBS Documentaries</span></div><div class="tile"><img src="https://i.ytimg.com/vi/bh1lcn2SPNg/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Astrum Extra</span></div></div><div class="wgrid"><div class="tile"><img src="https://i.ytimg.com/vi/eQryUeIv3ow/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">GIRL TALK</span></div><div class="tile"><img src="https://i.ytimg.com/vi/BfZYFZ1gTpE/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Marvin Achi</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/AfaIN0t1J2A/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">174 days old · 3.2M/mo</span><span class="cn">Travel Lifestyle</span></div><div class="tile"><img src="https://i.ytimg.com/vi/c58LOv0VCxQ/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">STAYAWAKE - Crime &amp; Psychology</span></div><div class="tile"><img src="https://i.ytimg.com/vi/ZOjVzqFqjW0/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">All The Gear</span></div><div class="tile"><img src="https://i.ytimg.com/vi/BRESQ8NX-us/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">ErikDoesVFX</span></div><div class="tile"><img src="https://i.ytimg.com/vi/7HF92d0X3Jc/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">nikola’s pilates</span></div><div class="tile"><img src="https://i.ytimg.com/vi/xg8ieJQIB70/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Sleepy Science Channel</span></div><div class="tile"><img src="https://i.ytimg.com/vi/OIPDOFsQcCM/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Bunch of Friends</span></div><div class="tile"><img src="https://i.ytimg.com/vi/B32enfrhPzg/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Kayla</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/e7ki7bSIauY/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">117 days old · 9.6M/mo</span><span class="cn">HypnoPhysics</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/aT9KKgyRhKM/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">48 days old · 2.1M/mo</span><span class="cn">Shelter Line</span></div><div class="tile"><img src="https://i.ytimg.com/vi/DzvbeUzY5zg/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Nico Polo</span></div><div class="tile"><img src="https://i.ytimg.com/vi/gT66JQYWdZE/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Chat History Compilations</span></div><div class="tile"><img src="https://i.ytimg.com/vi/ZK7LZq4m8R4/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Jando</span></div><div class="tile"><img src="https://i.ytimg.com/vi/2k3w_XHRd1s/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Textify</span></div><div class="tile"><img src="https://i.ytimg.com/vi/hs0xo7lteQs/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">StrawHatMidas</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/8IDSe2S5hkw/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">85 days old · 4.8M/mo</span><span class="cn">Dr. Ares Senior</span></div><div class="tile"><img src="https://i.ytimg.com/vi/cjITrk93MqM/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Britt and Drew</span></div><div class="tile"><img src="https://i.ytimg.com/vi/0TbUwJMgMCs/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">eslis</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/xFdd-i4eo8w/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">81 days old · 2.3M/mo</span><span class="cn">Mama Pearline</span></div><div class="tile"><img src="https://i.ytimg.com/vi/QLdQXKm9EFE/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">The Good, The Bad &amp; The Football</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/ldGS4hWcHgw/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">103 days old · 3.6M/mo</span><span class="cn">Yucky Stew</span></div><div class="tile"><img src="https://i.ytimg.com/vi/S1qmLwSpRAg/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">WSM</span></div><div class="tile"><img src="https://i.ytimg.com/vi/3J_miNIpmtc/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Deep Space News</span></div><div class="tile"><img src="https://i.ytimg.com/vi/tquErGz0f-o/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Stay Wild Reacts</span></div><div class="tile"><img src="https://i.ytimg.com/vi/jU1y-kI2NvU/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">The moving soul of the Carpathian heritage</span></div><div class="tile"><img src="https://i.ytimg.com/vi/ytrtFsXRXGY/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Kai Trump</span></div><div class="tile"><img src="https://i.ytimg.com/vi/4isNf8ZNwPk/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">CONO</span></div><div class="tile"><img src="https://i.ytimg.com/vi/VVvVSAn_g2E/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">MIKEY &amp; WYATT</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/fPN5u8nUJRk/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">313 days old · 4.7M/mo</span><span class="cn">Mind Palace</span></div><div class="tile"><img src="https://i.ytimg.com/vi/NQ_oQPZ5cuY/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Celebrity Substitute</span></div><div class="tile"><img src="https://i.ytimg.com/vi/l7i86kCqaZg/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">RAR Garage</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/UPsolClJ-hE/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">105 days old · 3.3M/mo</span><span class="cn">KadrathReforged</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/RWdyANQ-rXc/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">25 days old · 3.6M/mo</span><span class="cn">Below The Map</span></div><div class="tile"><img src="https://i.ytimg.com/vi/ohuh-oRrhMk/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">FNCS Pickaxe</span></div><div class="tile"><img src="https://i.ytimg.com/vi/0K-OcgzX-6Y/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">B N S</span></div><div class="tile"><img src="https://i.ytimg.com/vi/41dD-N5-3no/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Paul Warburg</span></div><div class="tile"><img src="https://i.ytimg.com/vi/WdGR3cfB5g8/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Grandma Edith Cooks</span></div><div class="tile"><img src="https://i.ytimg.com/vi/kw2e7fMshCA/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">ARAD</span></div><div class="tile"><img src="https://i.ytimg.com/vi/Si5jAkq-rgM/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Extra Medium Stuff</span></div><div class="tile"><img src="https://i.ytimg.com/vi/Xzo5witfaW0/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Kay B Chung</span></div><div class="tile"><img src="https://i.ytimg.com/vi/Ks-qwP5mTIw/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">MashtagBrady2.0</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/kNzMbkOPOgM/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">255 days old · 45.9M/mo</span><span class="cn">OverTales</span></div><div class="tile"><img src="https://i.ytimg.com/vi/eqCNMbcsXWo/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">BOAT BUSTERS</span></div><div class="tile"><img src="https://i.ytimg.com/vi/1MOY2iXOh3U/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Lesnoy Speed</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/d_uAsoejDK0/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">47 days old · 8.7M/mo</span><span class="cn">Bodycam C4</span></div><div class="tile"><img src="https://i.ytimg.com/vi/g8ZTNPlkZQw/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">MindsetVibrations</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/Gwdhz64bQ3E/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">55 days old · 3.4M/mo</span><span class="cn">RELIC ORIGINS</span></div><div class="tile" data-hot="1"><img src="https://i.ytimg.com/vi/ij9z85WeRH8/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd">22 days old · 3.8M/mo</span><span class="cn">Bodycam Sins</span></div><div class="tile"><img src="https://i.ytimg.com/vi/B5Lp_muhV3c/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Chad Chad Chad</span></div><div class="tile"><img src="https://i.ytimg.com/vi/gjrypnIcxEE/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Tiger A. Smith</span></div><div class="tile"><img src="https://i.ytimg.com/vi/UzVu5sa3UEo/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">elialody</span></div><div class="tile"><img src="https://i.ytimg.com/vi/fKkyLwNiQ1Q/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Zac Rios</span></div><div class="tile"><img src="https://i.ytimg.com/vi/2mQqFcqvHgk/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Shania and Eddie</span></div><div class="tile"><img src="https://i.ytimg.com/vi/EWneVjsqkBg/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Clovr Cards</span></div><div class="tile"><img src="https://i.ytimg.com/vi/rBZ0BeMhEmQ/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Kindly Sleepin&#x27;</span></div><div class="tile"><img src="https://i.ytimg.com/vi/pFiPJ9oO-To/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">CaylusBlox</span></div><div class="tile"><img src="https://i.ytimg.com/vi/YLO7tCdBVrA/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">PBS Documentaries</span></div><div class="tile"><img src="https://i.ytimg.com/vi/bh1lcn2SPNg/mqdefault.jpg" alt="" loading="eager" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn">Astrum Extra</span></div></div></div></div>
+    <div class="beam"><i></i></div><div class="scanhud"><b>SCANNING</b> <span id="scN">0</span> channels · <span id="scH">0</span> breakouts found</div>
+    <div class="shade"></div>
+  </div>
+  <div class="horizon"></div>
+  <div class="wrap">
+    <div>
+      <span class="pill rv">Warning: makes guessing feel silly</span>
+      <h1 class="glow-t"><span class="ln"><span>Copy what’s</span></span><span class="ln"><span class="magtxt">already working.</span></span></h1>
+      <p class="lede rv">Here’s something kinda nuts. Right now, a YouTube channel that didn’t exist 90 days ago is pulling millions of views a month. No famous face. No big budget. <b>Tube Search finds channels like that, shows you exactly why they’re winning, and helps you make your own version.</b> (The format, not the video. We’re not monsters.) Even if you’ve never hit record in your life.</p>
+      <div class="ctas rv"><a class="btn btn-b" href="#pricing">Get Tube Search <span class="arr">→</span></a><a class="btn btn-g" href="#demo" data-video><svg class="ic" style="width:16px;height:16px;fill:#fff;stroke:none"><use href="#i-play"/></svg> Watch the demo</a></div>
+      <form class="try rv" id="try" autocomplete="off" role="search">
+        <div class="tryin"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="tryq" type="text" maxlength="40" enterkeyhint="search" placeholder="Type anything you’re into…" aria-label="Type anything you’re into"><button class="btn btn-b" type="submit">Scan it</button></div>
+        <div class="trychips"><span>Try:</span><button type="button" data-q="cars">Cars</button><button type="button" data-q="true crime">True crime</button><button type="button" data-q="cooking">Cooking</button><button type="button" data-q="space">Space</button><button type="button" data-q="money">Money</button><button type="button" data-q="gaming">Gaming</button></div>
+      </form>
+    </div>
+    <div class="tryout" id="tryout" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- DIVE INTO ONE THUMBNAIL -->
+<section class="dive" id="dive" aria-label="One channel, broken down">
+  <div class="dvst">
+    <div class="dvcap dvc1"><span class="chap">Zoom in</span><h2>One channel on this wall<br>is blowing up…</h2></div>
+    <div class="dvwall" aria-hidden="true"><i class="dvbeam"></i></div>
+    <div class="dvthumb"><img src="" alt="" referrerpolicy="no-referrer"><span class="bd"></span><span class="cn"></span><i class="scan"></i></div>
+    <div class="dvapp"><img src="" alt="" loading="lazy">
+      <i class="dvhl"><span>The angle</span></i>
+      <i class="dvhl"><span>10 title ideas</span></i>
+      <i class="dvhl"><span>Thumbnail + script</span></i>
+      <i class="dvhl"><span>Costs + earnings</span></i>
+    </div>
+    <div class="dvcap dvc2"><h2>…Tube Search shows you why.</h2><p>Then hands you the playbook. The angle. The format. Ten title ideas. The thumbnail pattern. What it costs and what it earns. For every channel we track.</p></div>
+    <div class="dvflash"></div>
+    <div class="dvprog" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i></div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="nums" aria-label="What Tube Search tracks"><div class="wrap">
+  <div class="num rv"><b data-count="865">865</b><span>growing channels, hand-picked</span><small>updated every week</small></div>
+  <div class="num rv"><b data-count="11.4" data-dec="1" data-suf="B">11.4B</b><span>views a month, broken down</span><small>across those channels</small></div>
+  <div class="num rv"><b data-count="155">155</b><span>niches scored and ranked</span><small>long-form + Shorts</small></div>
+  <div class="num rv"><b data-count="40" data-suf="+">40+</b><span>tools, training and live calls</span><small>in one membership</small></div>
+</div></section>
+
+<!-- CARD PACK -->
+<section class="packs" id="packs" aria-label="Open a pack of real channels">
+  <div class="wrap center"><span class="chap">Feeling lucky?</span><h2 class="lead2">Open a pack.<br><span class="magtxt">Every card is a real channel.</span></h2><p class="sub">Five real, growing channels from this week’s data. Gold cards are under 4 months old and already past 2M views a month. Yes, really.</p></div>
+  <div class="pkstage">
+    <button class="pack" id="pack" type="button" aria-label="Open the pack">
+      <span class="pktop"></span>
+      <span class="pkbody"><span class="pkin"><span class="lg">TUBE SEARCH</span><span class="big">Breakout<br>pack</span><span class="cnt">5 REAL CHANNELS · NOV 2026</span><span class="tap">Tap to rip it open</span></span></span>
+    </button>
+    <i class="pkburst"></i>
+    <div class="pkcards" id="pkcards" aria-live="polite"></div>
+  </div>
+  <div class="pkbar"><button class="btn btn-g" id="pkagain" type="button" hidden>Open another pack</button></div>
+  <p class="pknote">Real channels and numbers from our weekly snapshot. Inside Tube Search, every one comes with its full breakdown.</p>
+</section>
+
+<section class="river" aria-label="Real screens from inside Tube Search">
+  <div class="wrap center"><span class="chap">Inside the app</span><p class="lead2 rv" style="margin-top:16px">Real screens. No mockups. No stock photos of people pointing at laptops.</p></div>
+  <div class="rv-rows"><div class="rrow" data-dir="1"><img src="img/app/quiz.webp" alt="" loading="lazy"><img src="img/app/radar.webp" alt="" loading="lazy"><img src="img/app/scorecard.webp" alt="" loading="lazy"><img src="img/app/cp_list.webp" alt="" loading="lazy"><img src="img/app/xr_top.webp" alt="" loading="lazy"><img src="img/app/kit_titles.webp" alt="" loading="lazy"><img src="img/app/st_gallery.webp" alt="" loading="lazy"><img src="img/app/dc_top.webp" alt="" loading="lazy"><img src="img/app/hot_list.webp" alt="" loading="lazy"><img src="img/app/plan_path.webp" alt="" loading="lazy"><img src="img/app/sp_card.webp" alt="" loading="lazy"><img src="img/app/gr_tasks.webp" alt="" loading="lazy"><img src="img/app/quiz.webp" alt="" loading="lazy"><img src="img/app/radar.webp" alt="" loading="lazy"><img src="img/app/scorecard.webp" alt="" loading="lazy"><img src="img/app/cp_list.webp" alt="" loading="lazy"><img src="img/app/xr_top.webp" alt="" loading="lazy"><img src="img/app/kit_titles.webp" alt="" loading="lazy"><img src="img/app/st_gallery.webp" alt="" loading="lazy"><img src="img/app/dc_top.webp" alt="" loading="lazy"><img src="img/app/hot_list.webp" alt="" loading="lazy"><img src="img/app/plan_path.webp" alt="" loading="lazy"><img src="img/app/sp_card.webp" alt="" loading="lazy"><img src="img/app/gr_tasks.webp" alt="" loading="lazy"></div><div class="rrow" data-dir="-1"><img src="img/app/lk_res.webp" alt="" loading="lazy"><img src="img/app/sc_hook.webp" alt="" loading="lazy"><img src="img/app/fc_res.webp" alt="" loading="lazy"><img src="img/app/tp.webp" alt="" loading="lazy"><img src="img/app/kit_top.webp" alt="" loading="lazy"><img src="img/app/details_top.webp" alt="" loading="lazy"><img src="img/app/cp_box.webp" alt="" loading="lazy"><img src="img/app/quiz.webp" alt="" loading="lazy"><img src="img/app/xr_top.webp" alt="" loading="lazy"><img src="img/app/dc_top.webp" alt="" loading="lazy"><img src="img/app/lk_res.webp" alt="" loading="lazy"><img src="img/app/sc_hook.webp" alt="" loading="lazy"><img src="img/app/fc_res.webp" alt="" loading="lazy"><img src="img/app/tp.webp" alt="" loading="lazy"><img src="img/app/kit_top.webp" alt="" loading="lazy"><img src="img/app/details_top.webp" alt="" loading="lazy"><img src="img/app/cp_box.webp" alt="" loading="lazy"><img src="img/app/quiz.webp" alt="" loading="lazy"><img src="img/app/xr_top.webp" alt="" loading="lazy"><img src="img/app/dc_top.webp" alt="" loading="lazy"></div></div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement"><div class="wrap"><p data-scrub>Somewhere on YouTube right now, a brand-new channel is getting a million views a month. And here’s the kicker: it didn’t get lucky. It found a *hungry* *niche* and a format that *already* *works.* Tube Search shows you *which* *one,* *and* *why.*</p></div></section>
+
+<div class="journeywrap" id="jw">
+<svg class="jpath" id="jpath" aria-hidden="true"><defs><linearGradient id="jg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1100" spreadMethod="reflect"><stop offset="0" stop-color="#FF8AF7"/><stop offset=".33" stop-color="#E040FB"/><stop offset=".66" stop-color="#A78BFA"/><stop offset="1" stop-color="#5EEAD4"/></linearGradient><radialGradient id="jhead"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".95"/><stop offset=".3" stop-color="#F9A8D4" stop-opacity=".7"/><stop offset="1" stop-color="#E040FB" stop-opacity="0"/></radialGradient><radialGradient id="jdot"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".4" stop-color="#F5D0FE"/><stop offset="1" stop-color="#E040FB" stop-opacity="0"/></radialGradient></defs><path class="base"/><path class="hz1 dr"/><path class="hz2 dr"/><path class="draw dr"/><path class="core dr"/></svg><svg class="jpath jfx" id="jfx" aria-hidden="true"><g class="pulses"></g><g class="sparks"></g><circle class="aura" r="40" fill="url(#jhead)"/><circle class="ring" r="10"/><circle class="ring r2" r="10"/><circle class="spark" r="5.5"/></svg>
+
+<!-- CHAPTER 01: FIND -->
+<section class="chapter" id="ch1"><div class="wrap">
+  <span class="chap">Find</span>
+  <h2 class="h2"><span class="ln"><span>Find the </span></span><span class="ln"><span class="magtxt">gap</span></span></h2>
+  <p class="lead2 rv">Pick the right niche and half the battle is won. Pick the wrong one and, well, you know.</p>
+  <p class="sub rv">Look, here’s what nobody tells you. You can be funny, smart and great on camera and still go nowhere if nobody wants what you make. The niche decides almost everything: what you earn, how fast you grow, and whether anybody shows up at all. So we scored every niche we track on demand, pay, crowding and effort. <mark class="hl">Go ahead, tap a topic below.</mark> That’s real data from this week, not a demo.</p>
+  <p class="note n-c" aria-hidden="true">It’s live. Go on, tap one ↓</p>
+</div></section>
+<section class="blk"><div class="wrap">
+  <div class="demo rv" id="fnd">
+    <div class="chips" id="chips"></div>
+    <div class="fbar"><span>Show me:</span><div class="seg" id="kind"><button class="on" data-k="L">Long videos</button><button data-k="S">Shorts</button></div></div>
+    <div class="results" id="res"><div class="empty">Tap one or two topics above</div></div>
+  </div>
+</div></section>
+
+<!-- CHAPTER 02: COPY THE FORMAT -->
+<section class="chapter" id="ch2"><div class="wrap">
+  <span class="chap">Copy</span>
+  <h2 class="h2"><span class="ln"><span>Copy the </span></span><span class="ln"><span class="magtxt">format</span></span></h2>
+  <p class="lead2 rv">Not the video. Never the video. The format.</p>
+  <p class="sub rv">Once you’ve got your niche, you find the small channels quietly winning in it. Then you pop the hood. What do they post? How do they title it? What do their thumbnails look like? How long are the videos? How often do they upload? <mark class="hl">You’re not copying their videos.</mark> You’re copying what works, then making it yours. Watch.</p>
+</div></section>
+<section class="blk"><div class="wrap">
+  <div class="stage rv"><div class="win" id="win">
+    <div class="chrome"><i></i><i></i><i></i><div class="url"><svg class="ic"><use href="#i-lock"/></svg>app.tubesearch · real screens</div></div>
+    <div class="screens" id="screens">
+      <img class="on" src="img/ui/quiz.webp" alt="Tube Search: your top 3 niches after the quiz">
+      <img src="img/ui/radar.webp" alt="Tube Search: the Niche Radar" loading="lazy">
+      <img src="img/ui/lists.webp" alt="Tube Search: new and proven channels list" loading="lazy">
+      <img src="img/ui/hot.webp" alt="Tube Search: Hot on YouTube" loading="lazy">
+    </div>
+    <div class="cursor" id="cur"><svg viewBox="0 0 24 24"><path d="M4 2l16 10-7 1.5L9.5 21z" fill="#fff" stroke="#0D0420" stroke-width="1.2" stroke-linejoin="round"/></svg><span class="rip"></span></div>
+    <div class="toast" id="toast"><span class="dot"><svg class="ic" style="width:16px;height:16px"><use href="#i-check"/></svg></span><div><b id="tt">Your top match: Architecture</b><small id="ts">Score 72 · $3.59 per 1,000 views</small></div></div>
+  </div></div>
+  <div class="steps-mini" id="smini"><button aria-label="Scene 1"><i></i></button><button aria-label="Scene 2"><i></i></button><button aria-label="Scene 3"><i></i></button><button aria-label="Scene 4"><i></i></button></div>
+</div></section>
+
+<!-- EVERYTHING YOU GET -->
+<section class="chapter" id="get"><div class="wrap">
+  <span class="chap">What you get</span>
+  <h2 class="h2"><span class="ln"><span>Everything. </span></span><span class="ln"><span class="magtxt">Seriously.</span></span></h2>
+  <p class="lead2 rv">Here’s everything inside. All of it. So there are no surprises later.</p>
+  <p class="sub rv">Works as a Windows app or in any browser on Mac, iPad or Chromebook. Fresh data every single week. Tap any tool to see its <mark class="hl">real screen</mark>. Or just sit back and watch.</p>
+</div></section>
+<!-- TOOL BOX: the Find / Plan / Make / Grow tour, plays by itself, no scroll pinning -->
+<section class="tbx-sec" id="toolbox" aria-label="Every tool, by step"><div class="wrap"><div class="tbx" id="tbx"><div class="tbx-tabs" role="tablist"><button type="button" class="tbx-tab on" data-t="0" role="tab"><b>1</b>Find</button><button type="button" class="tbx-tab" data-t="1" role="tab"><b>2</b>Plan</button><button type="button" class="tbx-tab" data-t="2" role="tab"><b>3</b>Make</button><button type="button" class="tbx-tab" data-t="3" role="tab"><b>4</b>Grow</button><i class="tbx-ind"></i></div><div class="tbx-body"><div class="tbx-list"><div class="tbx-pane on" data-t="0"><button type="button" class="tbx-tool" data-img="img/app/quiz.webp" data-k="0"><span class="tb"><svg class="ic"><use href="#i-compass"/></svg></span><span class="tx"><b>Find my niche quiz</b><small>Five quick questions. About a minute. Out pop your three best-fit niches, faceless or on camera.</small></span><i class="bar"></i></button><button type="button" class="tbx-tool" data-img="img/app/radar.webp" data-k="1"><span class="tb"><svg class="ic"><use href="#i-target"/></svg></span><span class="tx"><b>Niche Radar + Scorecard</b><small>Every niche on one chart. Which ones pay. Which ones are crowded. Which ones are wide open.</small></span><i class="bar"></i></button><button type="button" class="tbx-tool" data-img="img/ui/lists.webp" data-k="2"><span class="tb"><svg class="ic"><use href="#i-list"/></svg></span><span class="tx"><b>Growing channel lists</b><small>Channels growing right now, long-form and Shorts. With filters that actually help (imagine that).</small></span><i class="bar"></i></button><button type="button" class="tbx-tool" data-img="img/app/calc.webp" data-k="3"><span class="tb"><svg class="ic"><use href="#i-dollar"/></svg></span><span class="tx"><b>Earnings calculator</b><small>What months 1 to 12 could look like. Honest estimates, clearly labeled. No rented Lamborghinis.</small></span><i class="bar"></i></button><button type="button" class="tbx-tool" data-img="img/app/plan_path.webp" data-k="4"><span class="tb"><svg class="ic"><use href="#i-cal"/></svg></span><span class="tx"><b>My channel plan</b><small>A 9-step path from “I have no idea” to video number one. It even points at what to click.</small></span><i class="bar"></i></button></div><div class="tbx-pane" data-t="1"><button type="button" class="tbx-tool" data-img="img/app/xr_top.webp" data-k="0"><span class="tb"><svg class="ic"><use href="#i-scan"/></svg></span><span class="tx"><b>Channel X-Ray <span class="pl">Pro</span></b><small>Paste any channel. See its breakouts, its pace, rough earnings and the formula behind it. A little creepy. Very useful.</small></span><i class="bar"></i></button><button type="button" class="tbx-tool" data-img="img/app/blueprint.webp" data-k="1"><span class="tb"><svg class="ic"><use href="#i-file"/></svg></span><span class="tx"><b>Blueprints <span class="pl">Pro</span></b><small>A copy-this-channel plan on one page: the angle, title ideas, thumbnail style, script outline, even the costs. Save it as a PDF.</small></span><i class="bar"></i></button><button type="button" class="tbx-tool" data-img="img/app/hot_list.webp" data-k="2"><span class="tb"><svg class="ic"><use href="#i-flame"/></svg></span><span class="tx"><b>Hot on YouTube + Rising topics</b><small>What YouTube is pushing today, plus topics that just took off. Get there in the first 48 hours, before everybody else piles in.</small></span><i class="bar"></i></button><button type="button" class="tbx-tool" data-img="img/app/ideas.webp" data-k="3"><span class="tb"><svg class="ic"><use href="#i-bulb"/></svg></span><span class="tx"><b>Viral ideas</b><small>Video ideas backed by real videos that already blew up in your niche. Not guesses from a random idea machine.</small></span><i class="bar"></i></button><button type="button" class="tbx-tool" data-img="img/app/cm_ideas.webp" data-k="4"><span class="tb"><svg class="ic"><use href="#i-msg"/></svg></span><span class="tx"><b>Comment-to-Video</b><small>Reads your viewers’ comments and hands you your next five videos. They’re literally telling you what to make.</small></span><i class="bar"></i></button></div><div class="tbx-pane" data-t="2"><button type="button" class="tbx-tool" data-img="img/app/kit_top.webp" data-k="0"><span class="tb"><svg class="ic"><use href="#i-rocket"/></svg></span><span class="tx"><b>Video Launch Kit <span class="pl">Pro</span></b><small>Drop in one idea. Get scored titles, opening lines, a script outline, description and tags. Done before your coffee gets cold.</small></span><i class="bar"></i></button><button type="button" class="tbx-tool" data-img="img/app/st_gallery.webp" data-k="1"><span class="tb"><svg class="ic"><use href="#i-image"/></svg></span><span class="tx"><b>Thumbnail Studio <span class="pl">Pro</span></b><small>91 pro templates, your photo cut out for you, a score out of 100 and tests against the top videos. Look like you hired a designer.</small></span><i class="bar"></i></button><button type="button" class="tbx-tool" data-img="img/app/sc_hook.webp" data-k="2"><span class="tb"><svg class="ic"><use href="#i-mic"/></svg></span><span class="tx"><b>Script coach + teleprompter</b><small>Scores your first 10 seconds, flags the slow bits, then scrolls your script on screen so you can read it on camera.</small></span><i class="bar"></i></button><button type="button" class="tbx-tool" data-img="img/app/cp_list.webp" data-k="3"><span class="tb"><svg class="ic"><use href="#i-cut"/></svg></span><span class="tx"><b>Shorts clip finder</b><small>Finds the five best moments in your long video and turns them into captioned vertical Shorts. One video in, five Shorts out.</small></span><i class="bar"></i></button></div><div class="tbx-pane" data-t="3"><button type="button" class="tbx-tool" data-img="img/app/dc_top.webp" data-k="0"><span class="tb"><svg class="ic"><use href="#i-heart"/></svg></span><span class="tx"><b>Channel Doctor</b><small>A checkup out of 100. What’s working, what’s quietly killing your views, and what to make next.</small></span><i class="bar"></i></button><button type="button" class="tbx-tool" data-img="img/app/gr_tasks.webp" data-k="1"><span class="tb"><svg class="ic"><use href="#i-chart"/></svg></span><span class="tx"><b>My growth plan</b><small>A short to-do list for your channel every Monday. Do the list. Watch the numbers.</small></span><i class="bar"></i></button><button type="button" class="tbx-tool" data-img="img/app/sp_card.webp" data-k="2"><span class="tb"><svg class="ic"><use href="#i-dollar"/></svg></span><span class="tx"><b>Sponsor Finder</b><small>Which brands pay channels like yours, their promo codes, the smallest channels they sponsor, and a pitch you can send today.</small></span><i class="bar"></i></button><button type="button" class="tbx-tool" data-img="img/app/cc_box_top.webp" data-k="3"><span class="tb"><svg class="ic"><use href="#i-bot"/></svg></span><span class="tx"><b>Tube Search for Claude</b><small>Put Tube Search inside your own Claude. Ask it anything about niches and channels. It answers with our live numbers.</small></span><i class="bar"></i></button></div></div><div class="tbx-shot"><div class="tbx-scr"><img class="tbx-img on" src="img/app/quiz.webp" alt="Tube Search app screen"><img class="tbx-img" alt=""></div><p class="tbx-now"></p></div></div><div class="tbx-prog" aria-hidden="true"><i></i></div><div class="tbx-foot"><span class="tbx-play"></span></div></div></div></section>
+<!-- UP CLOSE -->
+<section class="upc" id="upclose"><div class="ust">
+  <p class="deck-cap"><span class="chap">Up close</span> Scroll to flip through every screen</p>
+  <div class="utrack"><article class="uc"><div class="ui"><img src="img/app/quiz.webp" alt="Find my niche quiz screen"></div><div class="ub"><span class="ut">Find</span><h3>Find my niche quiz</h3><ul><li>Five quick questions, about 60 seconds</li><li>Faceless, on camera, or either</li><li>Your three best-fit niches and why</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/radar.webp" alt="Niche Radar screen"></div><div class="ub"><span class="ut">Find</span><h3>Niche Radar</h3><ul><li>Every niche on one chart</li><li>Demand against crowding at a glance</li><li>Tap any dot for its real numbers</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/scorecard.webp" alt="Niche Scorecard screen"></div><div class="ub"><span class="ut">Find</span><h3>Niche Scorecard</h3><ul><li>Each niche scored 0 to 100</li><li>Pay per 1,000 views, typical views, new winners</li><li>Competition, reach and effort side by side</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/details_top.webp" alt="Channel details screen"></div><div class="ub"><span class="ut">Find</span><h3>Channel details</h3><ul><li>Score, earnings estimate and upload pace</li><li>Views on their latest videos</li><li>Why it stands out, then Make my version</li></ul></div></article><article class="uc"><div class="ui"><img src="img/ui/lists.webp" alt="Growing channel lists screen"></div><div class="ub"><span class="ut">Find</span><h3>Growing channel lists</h3><ul><li>Channels growing right now, long-form and Shorts</li><li>Filters for views, age, length and pay</li><li>Faceless, on camera, or both</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/calc.webp" alt="Earnings calculator screen"></div><div class="ub"><span class="ut">Plan</span><h3>Earnings calculator</h3><ul><li>What months 1 to 12 could look like</li><li>Built on a real channel’s numbers</li><li>Honest estimates, clearly labeled</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/ideas.webp" alt="Viral ideas screen"></div><div class="ub"><span class="ut">Plan</span><h3>Viral ideas</h3><ul><li>Ideas backed by videos that already blew up</li><li>Pick a niche or type any topic</li><li>Save the ones you like for later</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/hot_list.webp" alt="Hot on YouTube screen"></div><div class="ub"><span class="ut">Plan</span><h3>Hot on YouTube</h3><ul><li>What is trending today, by category</li><li>Fastest growing videos from small channels</li><li>One click to make your version</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/cm_ideas.webp" alt="Comment-to-Video screen"></div><div class="ub"><span class="ut">Plan</span><h3>Comment-to-Video</h3><ul><li>Reads the comments on any video</li><li>Your next 5 videos, asked for by viewers</li><li>Shows who asked and how many agreed</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/xr_top.webp" alt="Channel X-Ray screen"></div><div class="ub"><span class="ut">Plan</span><h3>Channel X-Ray <span class="pl">Pro</span></h3><ul><li>Paste any channel</li><li>Its breakout videos and posting pace</li><li>The formula behind its growth</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/blueprint.webp" alt="Blueprints screen"></div><div class="ub"><span class="ut">Plan</span><h3>Blueprints <span class="pl">Pro</span></h3><ul><li>A copy-this-channel plan in one page</li><li>Angle, 10 title ideas, thumbnail pattern, script outline</li><li>Monthly costs and what the channel earns</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/lk_res.webp" alt="Channels like mine screen"></div><div class="ub"><span class="ut">Plan</span><h3>Channels like mine</h3><ul><li>Paste your channel or a handle</li><li>Similar channels that are growing</li><li>Same niche, size and video length</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/kit_top.webp" alt="Video Launch Kit screen"></div><div class="ub"><span class="ut">Make</span><h3>Video Launch Kit <span class="pl">Pro</span></h3><ul><li>One idea in, a full plan out</li><li>How hot the topic is right now</li><li>Best length and views to aim for</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/kit_titles.webp" alt="Title lab screen"></div><div class="ub"><span class="ut">Make</span><h3>Title lab</h3><ul><li>Titles scored out of 100</li><li>The style each title uses</li><li>Copy, save or use it in one click</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/st_gallery.webp" alt="Thumbnail Studio screen"></div><div class="ub"><span class="ut">Make</span><h3>Thumbnail Studio <span class="pl">Pro</span></h3><ul><li>91 pro templates, 35 premium</li><li>Drop in your own photo</li><li>Score it against the top videos</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/fc_res.webp" alt="Face thumbnail lab screen"></div><div class="ub"><span class="ut">Make</span><h3>Face thumbnail lab</h3><ul><li>Scores your face thumbnail out of 100</li><li>Size, expression, light and colors checked</li><li>See it at real phone size</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/sc_hook.webp" alt="Script coach screen"></div><div class="ub"><span class="ut">Make</span><h3>Script coach</h3><ul><li>Scores your first 10 seconds</li><li>Speaking time, long sentences, filler words</li><li>Three better openings to copy</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/cp_list.webp" alt="Shorts clip finder screen"></div><div class="ub"><span class="ut">Make</span><h3>Shorts clip finder</h3><ul><li>Finds the 5 best moments in a long video</li><li>Strong first line and a real payoff</li><li>Captions and a vertical preview ready</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/plan_path.webp" alt="My channel plan screen"></div><div class="ub"><span class="ut">Grow</span><h3>My channel plan</h3><ul><li>9 steps from no idea to video one</li><li>Points at exactly what to click</li><li>Ticks itself off as you go</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/dc_top.webp" alt="Channel Doctor screen"></div><div class="ub"><span class="ut">Grow</span><h3>Channel Doctor</h3><ul><li>A checkup out of 100</li><li>What is working and what is hurting views</li><li>What to make next</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/gr_tasks.webp" alt="My growth plan screen"></div><div class="ub"><span class="ut">Grow</span><h3>My growth plan</h3><ul><li>A fresh checklist every Monday</li><li>Built from your own channel</li><li>Follow-ups to your recent hits</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/sp_card.webp" alt="Sponsor Finder screen"></div><div class="ub"><span class="ut">Grow</span><h3>Sponsor Finder</h3><ul><li>Brands paying channels in your niche</li><li>The smallest channels they sponsor</li><li>Their codes and a pitch you can send</li></ul></div></article><article class="uc"><div class="ui"><img src="img/app/cc_box_top.webp" alt="Tube Search for Claude screen"></div><div class="ub"><span class="ut">Grow</span><h3>Tube Search for Claude</h3><ul><li>Put Tube Search inside your own Claude</li><li>Ask for niches, breakdowns and weekly plans</li><li>Answers come with our live numbers</li></ul></div></article></div>
+  <div class="ubar"><i></i></div><div class="ucount"><b>01</b> / 23</div>
+</div></section>
+
+<!-- CHAPTER 03: MAKE IT -->
+<section class="chapter" id="ch3"><div class="wrap">
+  <span class="chap">Make</span>
+  <h2 class="h2"><span class="ln"><span>Make it </span></span><span class="ln"><span class="magtxt">unmissable</span></span></h2>
+  <p class="lead2 rv">The thumbnail decides if anybody clicks. Period. End of story.</p>
+  <p class="sub rv">You could make the greatest video in the history of the internet. If the thumbnail looks like a 2009 PowerPoint slide, nobody will ever know. So we built 91 pro templates. Drop your photo in, the background disappears all by itself, and <mark class="hl">you look like you hired a designer</mark> (you didn’t). Every thumbnail below came straight out of Tube Search.</p>
+</div></section>
+<section class="blk">
+<div class="tplwall" id="tplw" aria-label="Thumbnails made with Tube Search templates">
+  <div class="plane" id="tplp">
+    <div class="row"><img src="img/tpl/t00.webp" alt="" loading="lazy"><img src="img/wall/w01.webp" alt="" loading="lazy"><img src="img/wall/w02.webp" alt="" loading="lazy"><img src="img/tpl/t06.webp" alt="" loading="lazy"><img src="img/wall/w04.webp" alt="" loading="lazy"><img src="img/wall/w05.webp" alt="" loading="lazy"><img src="img/tpl/t12.webp" alt="" loading="lazy"><img src="img/wall/w07.webp" alt="" loading="lazy"><img src="img/wall/w08.webp" alt="" loading="lazy"><img src="img/tpl/t00.webp" alt="" loading="lazy"><img src="img/wall/w01.webp" alt="" loading="lazy"><img src="img/wall/w02.webp" alt="" loading="lazy"><img src="img/tpl/t06.webp" alt="" loading="lazy"><img src="img/wall/w04.webp" alt="" loading="lazy"><img src="img/wall/w05.webp" alt="" loading="lazy"><img src="img/tpl/t12.webp" alt="" loading="lazy"><img src="img/wall/w07.webp" alt="" loading="lazy"><img src="img/wall/w08.webp" alt="" loading="lazy"></div>
+    <div class="row"><img src="img/tpl/t06.webp" alt="" loading="lazy"><img src="img/wall/w08.webp" alt="" loading="lazy"><img src="img/wall/w09.webp" alt="" loading="lazy"><img src="img/tpl/t12.webp" alt="" loading="lazy"><img src="img/wall/w11.webp" alt="" loading="lazy"><img src="img/wall/w12.webp" alt="" loading="lazy"><img src="img/tpl/t00.webp" alt="" loading="lazy"><img src="img/wall/w14.webp" alt="" loading="lazy"><img src="img/wall/w17.webp" alt="" loading="lazy"><img src="img/tpl/t06.webp" alt="" loading="lazy"><img src="img/wall/w08.webp" alt="" loading="lazy"><img src="img/wall/w09.webp" alt="" loading="lazy"><img src="img/tpl/t12.webp" alt="" loading="lazy"><img src="img/wall/w11.webp" alt="" loading="lazy"><img src="img/wall/w12.webp" alt="" loading="lazy"><img src="img/tpl/t00.webp" alt="" loading="lazy"><img src="img/wall/w14.webp" alt="" loading="lazy"><img src="img/wall/w17.webp" alt="" loading="lazy"></div>
+    <div class="row"><img src="img/tpl/t12.webp" alt="" loading="lazy"><img src="img/wall/w17.webp" alt="" loading="lazy"><img src="img/wall/w18.webp" alt="" loading="lazy"><img src="img/tpl/t00.webp" alt="" loading="lazy"><img src="img/wall/w20.webp" alt="" loading="lazy"><img src="img/wall/w22.webp" alt="" loading="lazy"><img src="img/tpl/t06.webp" alt="" loading="lazy"><img src="img/wall/w00.webp" alt="" loading="lazy"><img src="img/wall/w01.webp" alt="" loading="lazy"><img src="img/tpl/t12.webp" alt="" loading="lazy"><img src="img/wall/w17.webp" alt="" loading="lazy"><img src="img/wall/w18.webp" alt="" loading="lazy"><img src="img/tpl/t00.webp" alt="" loading="lazy"><img src="img/wall/w20.webp" alt="" loading="lazy"><img src="img/wall/w22.webp" alt="" loading="lazy"><img src="img/tpl/t06.webp" alt="" loading="lazy"><img src="img/wall/w00.webp" alt="" loading="lazy"><img src="img/wall/w01.webp" alt="" loading="lazy"></div>
+  </div>
+  <div class="tw-badge rv"><b data-count="91">91</b><span>pro templates<br>with your face on every one</span></div>
+</div>
+<div class="wrap"><div class="tw-feats">
+  <div class="rv"><span class="tb"><svg class="ic"><use href="#i-user"/></svg></span><h4>Your photo, cut out for you</h4><p>Upload any picture. The background vanishes in seconds, right on your computer. No green screen, no Photoshop.</p></div>
+  <div class="rv"><span class="tb"><svg class="ic"><use href="#i-target"/></svg></span><h4>Scored before you post</h4><p>A score out of 100 on size, contrast and text, plus how it looks on a phone. Because that’s where people actually see it.</p></div>
+  <div class="rv"><span class="tb"><svg class="ic"><use href="#i-chart"/></svg></span><h4>Tested against the top videos</h4><p>See yours side by side with the thumbnails already winning in your niche. Brutal. Helpful.</p></div>
+</div></div>
+</section>
+
+<!-- CHAPTER: MY VIDEO STUDIO -->
+<section class="chapter" id="studio"><div class="wrap">
+  <span class="chap">Studio</span>
+  <h2 class="h2"><span class="ln"><span>Idea to finished video. </span></span><span class="ln"><span class="magtxt">One sitting.</span></span></h2>
+  <p class="lead2 rv">Okay, this is the part where people usually say “wait, it does WHAT?”</p>
+  <p class="sub rv">Finding a winning niche is great. But then you still have to write the thing, voice it, find pictures for every scene, edit it and make a thumbnail. That’s where most channels quietly die. So we built <b>My Video Studio</b>. Pick an idea, Claude writes the script in your channel’s style (don’t love a line? Change it. Every word is yours to edit before you record), you record your voice (or use your own ElevenLabs voice), the storyboard fills itself with pictures, and <mark class="hl">the app edits the whole video for you</mark>. Captions, zooms, music, end screen. Then it makes three thumbnails to pick from. Here’s one we made. Hit play.</p>
+</div></section>
+<section class="blk" data-tim="🎬 Hit play on this one!"><div class="wrap">
+  <div class="ytw rv" id="vsv">
+    <div class="ytw-top">
+      <span class="ytw-menu" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="ytw-logo"><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7v10l8-5z"/></svg></b>Tube Search <em>Studio</em></span>
+      <div class="ytw-search"><span id="ytwQ"></span><i class="ytw-caret"></i><b class="ytw-sbtn" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></b></div>
+      <span class="ytw-mic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
+      <span class="ytw-create">+ Create</span>
+      <span class="ytw-bell" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 17V11a6 6 0 0 1 12 0v6l2 2H4z"/><path d="M10 21h4"/></svg><i>3</i></span>
+      <img class="ytw-me" src="img/tim/front.webp" alt="">
+    </div>
+    <div class="ytw-main">
+      <div class="ytw-col">
+        <div class="ytw-playwrap">
+          <canvas class="ytw-amb" id="ytwAmb" width="48" height="27" aria-hidden="true"></canvas>
+          <div class="ytw-stage vsv-stage" id="vsvStage">
+            <video id="vsvV" playsinline muted preload="metadata"></video>
+            <button type="button" class="ytw-unmute" id="vsvSnd" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 9l4 6M21 9l-4 6"/></svg>Tap to unmute</button>
+            <button type="button" class="vsv-big ytw-big" id="vsvBig" aria-label="Play with sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <div class="ytw-flash" id="ytwFlash" aria-hidden="true"></div>
+            <div class="ytw-next" id="ytwNext" hidden><p>Up next in <b id="ytwNs">6</b></p><div class="ytw-nc"><img id="ytwNi" alt=""><div><b id="ytwNt"></b><span>Tube Search Studio</span></div></div><div class="ytw-nb"><button type="button" id="ytwNcancel">Cancel</button><button type="button" id="ytwNplay">Play now</button></div></div>
+            <div class="ytw-ctl">
+              <div class="ytw-bar" id="ytwBar"><div class="ytw-segs" id="ytwSegs"></div><div class="ytw-tip" id="ytwTip"><img id="ytwTipI" alt=""><b id="ytwTipC"></b><span id="ytwTipT"></span></div></div>
+              <div class="ytw-row">
+                <button type="button" id="ytwPlay" aria-label="Play"><svg class="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><svg class="i-pause" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button>
+                <button type="button" id="ytwNextB" aria-label="Next video"><svg viewBox="0 0 24 24"><path d="M6 6l9 6-9 6zM16 6h2v12h-2z"/></svg></button>
+                <button type="button" id="ytwVol" aria-label="Sound"><svg class="i-on" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 8a5 5 0 0 1 0 8M18.5 5.5a8.5 8.5 0 0 1 0 13" fill="none" stroke="currentColor" stroke-width="2"/></svg><svg class="i-off" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 9l4 6M21 9l-4 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                <span class="ytw-time" id="ytwTime">0:00 / 0:00</span>
+                <span class="ytw-cname" id="ytwChap"></span>
+                <span class="ytw-sp"></span>
+                <button type="button" id="ytwSpeed" class="ytw-speed">1x</button>
+                <button type="button" id="ytwCC" class="ytw-cc" aria-label="Captions">CC</button>
+                <button type="button" id="ytwFs" aria-label="Full screen"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h5 class="ytw-title" id="vsvT"></h5>
+        <div class="ytw-chan">
+          <img class="ytw-av" src="img/tim/front.webp" alt="">
+          <div class="ytw-cn"><b>Tube Search Studio <i aria-hidden="true">✦</i></b><span>Made by Tim, Claude and the Tube Search crew</span></div>
+          <a class="ytw-sub" href="#pricing" id="ytwSub"><span>Subscribe</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 17V11a6 6 0 0 1 12 0v6l2 2H4z"/><path d="M10 21h4"/></svg></a>
+          <span class="ytw-acts">
+            <span class="ytw-pill ytw-ld"><button type="button" id="ytwLike"><svg viewBox="0 0 24 24"><path d="M7 11v9H4v-9zM7 11l4-7a2 2 0 0 1 3 2l-1 4h6a2 2 0 0 1 2 2l-2 7a2 2 0 0 1-2 1H7"/></svg><span>Like</span></button><button type="button" id="ytwDis" aria-label="Dislike"><svg viewBox="0 0 24 24"><path d="M17 13V4h3v9zM17 13l-4 7a2 2 0 0 1-3-2l1-4H5a2 2 0 0 1-2-2l2-7a2 2 0 0 1 2-1h10"/></svg></button></span>
+            <button type="button" class="ytw-pill" id="ytwShare"><svg viewBox="0 0 24 24"><path d="M14 5l7 7-7 7v-4c-6 0-9 2-11 5 1-6 4-10 11-11z"/></svg><span>Share</span></button>
+            <a class="ytw-pill ytw-make" href="#pricing"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg><span>Make one like this</span></a>
+          </span>
+        </div>
+        <div class="ytw-desc" id="ytwDesc">
+          <p class="ytw-dmeta" id="ytwMeta"></p>
+          <p class="ytw-dtext" id="vsvD"></p>
+          <p class="ytw-dk">Chapters</p>
+          <div class="ytw-chs" id="vsvCh"></div>
+        </div>
+      </div>
+      <aside class="ytw-side">
+        <div class="ytw-chips"><b class="on">All</b><b>From Tube Search Studio</b><b>Made with Claude</b><b>Faceless</b></div>
+        <div class="ytw-auto"><span>Up next</span><label><span>Autoplay</span><input type="checkbox" id="ytwAuto" checked><i></i></label></div>
+        <div class="ytw-list vsv-list" id="vsvList"></div>
+        <a class="ytw-yours" href="#pricing"><span class="ytw-yt"><b>YOUR<br>VIDEO</b><em>?:??</em></span><span class="ytw-yi"><b>Your next video goes right here</b><span>You · Tube Search Studio</span><span class="ytw-ym">Pick an idea. Hit record. Done.</span></span></a>
+      </aside>
+    </div>
+  </div>
+  <div class="vgrid">
+    <div class="vc rv"><span class="vc-ic vc-bot">🤖</span><h4>Video Autopilot</h4><p>Pick your days. Every Monday and Thursday a brand-new script, storyboard and thumbnails are waiting for you. All you do is hit record.</p><div class="vc-cal"><i>M</i><i class="on">T</i><i>W</i><i class="on">T</i><i>F</i><i>S</i><i>S</i></div><span class="pl">Coming soon</span></div>
+    <div class="vc rv"><span class="vc-ic">📈</span><h4>After-publish coach</h4><p>Day 1, day 3, day 7: are you ahead of your normal or behind? Behind gets a fix. Ahead gets a follow-up idea and 3 Shorts cut from it.</p><svg class="vc-line" viewBox="0 0 200 60" aria-hidden="true"><path d="M4 52 C40 50 60 44 80 38 S130 14 196 6" /><circle cx="196" cy="6" r="4"/></svg></div>
+    <div class="vc rv"><span class="vc-ic">🎨</span><h4>Your channel style</h4><p>Your colors, fonts, captions, pacing and your own editing ideas, saved once. Every video looks like YOUR channel, not a template.</p><div class="vc-sw"><i style="background:#0A0A0C"></i><i style="background:#D7263D"></i><i style="background:#EDEDED"></i><i style="background:#FFC857"></i></div></div>
+    <div class="vc rv"><span class="vc-ic">⚡</span><h4>Build it with Claude, too</h4><p>Want a fancier edit? Download your personal editing skill and have Claude build it with HyperFrames, Remotion or both. We even give you the prompts.</p><code class="vc-code">npx skills add heygen-com/hyperframes</code></div>
+    <div class="vc rv"><span class="vc-ic">🖼️</span><h4>ChatGPT thumbnails</h4><p>Connect your own OpenAI account and get 3 thumbnails made from your script, previewed on a phone next to the top channels in your niche.</p></div>
+    <div class="vc rv"><span class="vc-ic">🔑</span><h4>Your keys stay yours</h4><p>Your OpenAI and ElevenLabs keys live on your computer only. They never touch our server. You pay them directly, a few cents a picture.</p></div>
+  </div>
+</div></section>
+
+<!-- CHAPTER 04: GROW -->
+<section class="chapter" id="ch4"><div class="wrap">
+  <span class="chap">Grow</span>
+  <h2 class="h2"><span class="ln"><span>Launch it. </span></span><span class="ln"><span class="magtxt">Keep growing.</span></span></h2>
+  <p class="lead2 rv">Most people quit at video five. We built a whole system so you don’t.</p>
+  <p class="sub rv">Here’s how it goes. A 30-day launch calendar, so you know what to post and when. A weekly growth plan built from your own channel. A checkup that tells you what’s working (and what isn’t). And when you’re ready to get paid, a list of brands already sponsoring channels your size. <mark class="hl">Play with the numbers below.</mark> Just don’t quit your day job over a slider, okay?</p>
+</div></section>
+<section class="blk"><div class="wrap">
+  <div class="est-notes" aria-hidden="true"><p class="note en-l"><span class="ew">Drag <u>Your</u> Sliders Here</span> <i class="ea">↓</i></p><p class="note en-r"><span class="ew">AND… Watch <u>Your</u> Money Grow Here!</span> <i class="ea">↓</i></p></div>
+  <div class="est">
+    <div class="panel rv">
+      <label for="eN">Pick a niche</label><select id="eN"></select>
+      <div class="rng"><div class="top"><label for="eU">Videos per week</label><b id="eUo">2</b></div><input type="range" id="eU" min="1" max="7" value="2"></div>
+      <div class="rng"><div class="top"><label for="eV">Average views per video</label><b id="eVo">20,000</b></div><input type="range" id="eV" min="0" max="100" value="45"></div>
+      <p style="color:#9F8FC8;font-size:16px">For reference, channels we track in this niche get a median of <b id="eMed" style="color:#fff">…</b> views a month.</p>
+    </div>
+    <div class="panel out rv">
+      <span class="cap">Estimated monthly ad revenue</span>
+      <div class="money magtxt" id="eOut">$0</div>
+      <span class="meta" id="eMeta">…</span>
+      <p class="disc">A rough estimate using the typical ad pay (RPM) for this niche and the numbers you picked. Real results vary a lot, and most channels earn less, especially at the start. You need to meet YouTube’s monetization rules to earn ad money. Not a promise. See our <a href="earnings-disclaimer.html">earnings disclaimer</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ON CAMERA -->
+<section class="chapter" id="oncam" data-jmid><div class="wrap">
+  <span class="chap">On camera</span>
+  <h2 class="h2"><span class="ln"><span>Like your face? </span></span><span class="ln"><span class="magtxt">Show it.</span></span></h2>
+  <p class="lead2 rv">Tube Search started as a faceless tool. Then the on-camera folks started knocking.</p>
+</div></section>
+<section class="blk"><div class="wrap">
+  <div class="cam">
+    <div class="copy">
+      <p class="rv">Here’s what happened. People who show their face kept telling us, “Love it. But I’m not hiding behind stock footage. I want to be <b>on</b> the video.” Fair enough. So we built them their own side of Tube Search.</p>
+      <p class="rv">Now you can find growing channels where a real human talks to the camera, in your exact niche. Car dealers. Fitness coaches. Cooks. Commentators. Paste your own channel and we’ll show you the growing channels most like yours, so you can see exactly what the folks a few steps ahead of you are doing differently.</p>
+      <p class="rv">Then we help with the scary part. You know, actually being on camera. <b>The script coach scores your first 10 seconds</b> (that’s where most people lose viewers), the teleprompter scrolls your script right on screen, and the face thumbnail lab tells you if your face is going to get the click. Or the scroll.</p>
+      <ul class="camlist">
+        <li class="rv"><span class="tb"><svg class="ic"><use href="#i-cam"/></svg></span><div><h4>On camera channel list</h4><p>Growing creators who show their face, scored like everything else.</p></div></li>
+        <li class="rv"><span class="tb"><svg class="ic"><use href="#i-copy"/></svg></span><div><h4>Channels like mine</h4><p>Paste your channel. See who’s most like you and growing faster.</p></div></li>
+        <li class="rv"><span class="tb"><svg class="ic"><use href="#i-mic"/></svg></span><div><h4>Script coach + teleprompter</h4><p>Hook score out of 10, pacing, filler words, then read it on screen.</p></div></li>
+        <li class="rv"><span class="tb"><svg class="ic"><use href="#i-user"/></svg></span><div><h4>Face thumbnail lab</h4><p>Face size, expression, light and phone-size previews, scored out of 100.</p></div></li>
+      </ul>
+    </div>
+    <div class="camvis rv" id="camvis">
+      <div class="fr f1"><img src="img/app/lk_res.webp" alt="Channels like mine results" loading="lazy"></div>
+      <div class="fr f2"><img src="img/app/sc_hook.webp" alt="Script coach hook score" loading="lazy"></div>
+      <div class="fr f3"><img src="img/app/fc_res.webp" alt="Face thumbnail lab score" loading="lazy"></div>
+      <span class="rec"><i></i>REC · Take 1</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- COMMUNITY + TRAINING -->
+<section class="chapter" id="community"><div class="wrap">
+  <span class="chap">Community &amp; training</span>
+  <h2 class="h2"><span class="ln"><span>You don’t have to </span></span><span class="ln"><span class="magtxt">do this alone</span></span></h2>
+  <p class="lead2 rv">Software tells you what to do. People help you actually do it.</p>
+  <p class="sub rv">Every plan comes with the Creator Community, live webinars and real humans in the chat. Premiere adds the full course and live coaching calls. <mark class="hl">It’s the difference between buying a gym membership and having a gym buddy who texts you at 6am.</mark> (Annoying? Slightly. Works? Absolutely.)</p>
+</div></section>
+<section class="blk"><div class="wrap">
+  <div class="cgrid">
+    <div class="cc wide rv"><div class="t"><span class="tb"><svg class="ic"><use href="#i-users"/></svg></span><h4>The Creator Community</h4><p>A feed, live chat, a wins channel, questions and answers, member profiles and badges. Post your thumbnail, get honest feedback, and celebrate your first 1,000 subs with people who get it.</p></div><img src="img/ui/community.webp" alt="The Tube Search Creator Community welcome screen" loading="lazy"></div>
+    <div class="cc wide rv"><div class="t"><span class="tb"><svg class="ic"><use href="#i-video"/></svg></span><h4>Live webinars</h4><p>Regular live sessions with the team: niche breakdowns, thumbnail teardowns, Q&amp;A. Save your seat in one click and get a reminder before it starts.</p></div><img src="img/ui/webinar.webp" alt="A Tube Search live webinar lobby" loading="lazy"></div>
+    <div class="cc rv"><span class="tb"><svg class="ic"><use href="#i-cap"/></svg></span><h4>The Classroom</h4><p>Step-by-step courses with lessons you can watch at your own pace, plus Premiere-only training.</p></div>
+    <div class="cc rv"><span class="tb"><svg class="ic"><use href="#i-mic"/></svg></span><h4>Live coaching calls</h4><p>Two live coaching calls a month with the team. Bring your channel, leave with a plan.</p><span class="pl">Premiere</span></div>
+    <div class="cc rv"><span class="tb"><svg class="ic"><use href="#i-msg"/></svg></span><h4>A real team in the chat</h4><p>Ask a question inside the app and an actual human answers. Shocking, we know.</p></div>
+  </div>
+</div></section>
+
+<section class="blk" id="askdata" data-tim="💬 Try a command!"><div class="wrap">
+  <div class="ad">
+    <div class="ad-copy">
+      <span class="chap">New in the Community</span>
+      <h3 class="ad-h">The chat <span class="magtxt">knows the data.</span></h3>
+      <p class="rv">Type a command in the Community chat and the Tube Search bot answers with real numbers from this week’s data. Right there, in front of everybody. No more “I heard horror is saturated.” <b>Look it up.</b></p>
+      <ul class="ad-list">
+        <li class="rv"><b>🧭 Niche Guilds.</b> Join up to 5 niches and get a Morning Radar every day: breakouts, fastest growers, a video to study and an idea to try.</li>
+        <li class="rv"><b>📊 Data on Stage.</b> In live webinars, the host puts a member’s niche numbers up on the big screen while everybody watches.</li>
+        <li class="rv"><b>📺 Channel Zero.</b> We’re about to grow our own faceless channel from zero, in public, with these exact tools. The data picks the niche. You watch every number.</li>
+      </ul>
+    </div>
+    <div class="ad-chat rv">
+      <div class="ad-top"><span class="ad-dot"></span># general <em>· demo, real numbers</em></div>
+      <div class="ad-log" id="adLog"><div class="ad-m"><span class="ad-av">M</span><div><b>Maya</b><p>is horror still worth starting in? 👀</p></div></div></div>
+      <div class="ad-cmds" id="adCmds"><button type="button" data-c="niche">/niche horror</button><button type="button" data-c="breakout">/breakout</button><button type="button" data-c="ideas">/ideas history</button><button type="button" data-c="earn">/earn 1M</button></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- GUESS THE VIEWS -->
+<section class="gv" id="guess" aria-label="Guess the views game">
+  <div class="wrap center"><span class="chap">Quick game</span>
+    <h2 class="h2" style="margin-top:18px"><span class="ln"><span>Which one got </span></span><span class="ln"><span class="magtxt">more views?</span></span></h2>
+    <p class="sub rv">Two real videos from channels on our list. Tap the one you think won. Three rounds. No pressure. (Some pressure.)</p>
+  </div>
+  <div class="wrap">
+    <div class="gvbar"><span class="gvround">Round <b>1</b> of 3</span><span class="gvstreak"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 1-3s-3 1-3 6a6 6 0 0 0 12 0c0-6-6-9-6-12z"/></svg>Streak <b>0</b></span></div>
+    <div class="gvboard" id="gvboard" aria-live="polite"></div>
+    <div class="gvmsg" id="gvmsg"></div>
+    <div class="gvnext"><button class="btn btn-b" id="gvnext" type="button" hidden>Next round <span class="arr">→</span></button></div>
+  </div>
+</section>
+
+<!-- NOT NORMAL SOFTWARE -->
+<section class="chapter"><div class="wrap">
+  <span class="chap">Why it’s different</span>
+  <h2 class="h2"><span class="ln"><span>This isn’t another </span></span><span class="ln"><span class="magtxt">YouTube tool</span></span></h2>
+  <p class="lead2 rv">Most tools hand you a pile of numbers and wish you luck.</p>
+  <p class="sub rv">Keyword scores. Your own analytics, again. A giant list of tags. Cool. Now what? None of that tells you what to make. <mark class="hl">Tube Search starts with the channels already winning</mark> and works backwards into a plan you can actually follow.</p>
+</div></section>
+<section class="blk"><div class="wrap">
+  <div class="cmp" id="cmp">
+    <div class="r"><span class="h">What you need</span><span class="h">Most YouTube tools</span><span class="h us">Tube Search</span></div>
+    <div class="r"><span>Find small channels breaking out right now</span><span><i class="no"><svg class="ic"><use href="#i-x"/></svg></i></span><span class="us"><i class="yes"><svg class="ic"><use href="#i-check"/></svg></i></span></div>
+    <div class="r"><span>See why they work: topic, titles, thumbnails, pace</span><span><i class="no"><svg class="ic"><use href="#i-x"/></svg></i></span><span class="us"><i class="yes"><svg class="ic"><use href="#i-check"/></svg></i></span></div>
+    <div class="r"><span>A step-by-step plan from zero to your first video</span><span><i class="no"><svg class="ic"><use href="#i-x"/></svg></i></span><span class="us"><i class="yes"><svg class="ic"><use href="#i-check"/></svg></i></span></div>
+    <div class="r"><span>Titles, scripts, thumbnails and Shorts made for you</span><span><i class="no"><svg class="ic"><use href="#i-x"/></svg></i></span><span class="us"><i class="yes"><svg class="ic"><use href="#i-check"/></svg></i></span></div>
+    <div class="r"><span>Works for faceless and on-camera channels</span><span><i class="no"><svg class="ic"><use href="#i-x"/></svg></i></span><span class="us"><i class="yes"><svg class="ic"><use href="#i-check"/></svg></i></span></div>
+    <div class="r"><span>Courses, a community and live coaching</span><span><i class="no"><svg class="ic"><use href="#i-x"/></svg></i></span><span class="us"><i class="yes"><svg class="ic"><use href="#i-check"/></svg></i></span></div>
+  </div>
+  <div class="aud">
+    <div class="ac a1 rv"><span class="tg">Brand new to YouTube</span><h3>Start from zero</h3><p>No channel? No idea? No problem. We hold your hand from the very first decision. Gently. We promise.</p><ul><li><svg class="ic"><use href="#i-check"/></svg>The 60-second niche quiz picks your best niches</li><li><svg class="ic"><use href="#i-check"/></svg>A 9-step plan points at exactly what to click next</li><li><svg class="ic"><use href="#i-check"/></svg>Courses, live calls and a community that answers</li><li><svg class="ic"><use href="#i-check"/></svg>Templates so your first thumbnail doesn’t look like a first thumbnail</li></ul></div>
+    <div class="ac a2 rv"><span class="tg">Already growing</span><h3>Grow faster</h3><p>Already posting? Cool. Let’s find your next breakout, fix whatever’s quietly slowing you down, and get you paid.</p><ul><li><svg class="ic"><use href="#i-check"/></svg>Channel X-Ray on any competitor, plus Blueprints</li><li><svg class="ic"><use href="#i-check"/></svg>Channel Doctor and a weekly growth plan for your channel</li><li><svg class="ic"><use href="#i-check"/></svg>Sponsor Finder with a pitch written for you</li><li><svg class="ic"><use href="#i-check"/></svg>Hidden gem lists, CSV exports and live YouTube search</li></ul></div>
+  </div>
+</div></section>
+
+<!-- TEAM -->
+<section class="chapter"><div class="wrap">
+  <span class="chap">The humans</span>
+  <h2 class="h2"><span class="ln"><span>We’re not a </span></span><span class="ln"><span class="magtxt">faceless corporation</span></span></h2>
+  <p class="lead2 rv">(Ironic, given the product.)</p>
+</div></section>
+<section class="blk"><div class="wrap">
+  <div class="team tm"><div class="tm-fx" aria-hidden="true"><span class="tm-sweep"></span><span class="tm-spot"></span></div><div class="tm-tags"><button class="tm-tag" type="button" style="--x:0.16;--y:0.107;--i:0" data-x="0.16" data-y="0.107"><i></i>Dwayne</button><button class="tm-tag" type="button" style="--x:0.316;--y:0.138;--i:1" data-x="0.316" data-y="0.138"><i></i>Timbo</button><button class="tm-tag" type="button" style="--x:0.52;--y:0.121;--i:2" data-x="0.52" data-y="0.121"><i></i>Craig</button><button class="tm-tag" type="button" style="--x:0.674;--y:0.215;--i:3" data-x="0.674" data-y="0.215"><i></i>Kasey</button><button class="tm-tag" type="button" style="--x:0.884;--y:0.134;--i:4" data-x="0.884" data-y="0.134"><i></i>George</button></div><img src="img/team.webp" alt="The AI Creators &amp; Builders team: Dwayne, Timbo, Craig, Kasey and George" loading="lazy"><div class="cap"><div><h3>Dwayne, Timbo, Craig, Kasey and George</h3><p>Real people in a real office. We answer the chat, run the live calls and ship something new into Tube Search every single week. (Yes, every week. We may need a hobby.)</p></div><a class="btn btn-g" href="#pricing">Come build with us <span class="arr">→</span></a></div></div>
+</div></section>
+
+</div><!-- /journeywrap -->
+
+
+<!-- PRICING -->
+<section class="sec" id="pricing" style="padding-top:60px">
+  <div class="wrap center">
+    <span class="chap">Pricing</span>
+    <h2 class="h2" style="margin-top:18px"><span class="ln"><span>Pick your </span></span><span class="ln"><span class="magtxt">level</span></span></h2>
+    <p class="sub rv">Basic costs less than one takeout pizza a month. And unlike the pizza, you won’t regret it at 11pm. Move up or down any time. No contracts. Cancel from your account whenever you want.</p>
+  </div>
+  <div class="wrap">
+    <p class="swipe-hint" aria-hidden="true">Swipe to compare the 3 plans →</p>
+    <div class="prices pcards">
+      <div class="plan pc r-rare"><i class="pc-holo"></i><div class="pc-top"><span>Rare</span><em>Card 1 of 3</em></div><h3>Basic</h3><div class="for">Find your niche and start right</div><div class="price">$20<small>/month</small></div><div class="day">About 66¢ a day</div>
+        <ul><li><svg class="ic"><use href="#i-check"/></svg>Find my niche quiz + channel plan</li><li><svg class="ic"><use href="#i-check"/></svg>Niche Radar + Niche Scorecard</li><li><svg class="ic"><use href="#i-check"/></svg>Growing channel lists, long-form + Shorts</li><li><svg class="ic"><use href="#i-check"/></svg>Viral ideas, Title lab, earnings calculator</li><li><svg class="ic"><use href="#i-check"/></svg>30-day launch + weekly report</li><li><svg class="ic"><use href="#i-check"/></svg>Creator Community + live webinars</li></ul>
+        <a class="btn btn-g" data-pay="basic" href="https://buy.stripe.com/cNibJ196O8Gyc8A3NP4ZG01">Start with Basic</a></div>
+      <div class="plan best pc r-epic"><i class="pc-holo"></i><div class="pc-top"><span>Epic</span><em>Our pick</em></div><h3>Pro</h3><div class="for">The full toolbox for serious creators</div><div class="price">$49<small>/month</small></div><div class="day">About $1.61 a day</div>
+        <ul><li class="plus"><svg class="ic"><use href="#i-check"/></svg>Everything in Basic, plus:</li><li><svg class="ic"><use href="#i-check"/></svg>Channel X-Ray + Blueprints (PDF)</li><li><svg class="ic"><use href="#i-check"/></svg>Video Launch Kit + Make my version</li><li><svg class="ic"><use href="#i-check"/></svg>Thumbnail Studio, all 91 templates</li><li><svg class="ic"><use href="#i-check"/></svg>Live YouTube search + what viewers ask for</li><li><svg class="ic"><use href="#i-check"/></svg>Hidden gem lists + CSV exports</li></ul>
+        <a class="btn btn-b" data-pay="pro" href="https://buy.stripe.com/14A4gz96O8Gy8Wo7014ZG02">Go Pro <span class="arr">→</span></a></div>
+      <div class="plan pc r-leg"><i class="pc-holo"></i><div class="pc-top"><span>Legendary</span><em>Card 3 of 3</em></div><h3>Premiere</h3><div class="for">Tools, training and people</div><div class="price">$197<small>/month</small></div><div class="day">About $6.48 a day</div>
+        <ul><li class="plus"><svg class="ic"><use href="#i-check"/></svg>Everything in Pro, plus:</li><li><svg class="ic"><use href="#i-check"/></svg>The faceless YouTube channel course</li><li><svg class="ic"><use href="#i-check"/></svg>2 live coaching calls a month</li><li><svg class="ic"><use href="#i-check"/></svg>Book your calls right inside the app</li><li><svg class="ic"><use href="#i-check"/></svg>Premiere-only lessons in the Classroom</li></ul>
+        <a class="btn btn-gold" data-pay="premiere" href="https://buy.stripe.com/cNi28r2Iq7Cu7Sk5VX4ZG03">Go Premiere</a></div>
+    </div>
+    <div class="guar rv"><span class="sh"><svg class="ic" style="width:26px;height:26px"><use href="#i-shield"/></svg></span><div><b>Try it for 30 days. If it’s not for you, it’s on us.</b><p>Just email us within 30 days of your first payment and we’ll refund that payment. You can cancel any time from your account, too. No phone calls. No “retention specialist.” No guilt trip.</p></div></div>
+    <div class="after">
+      <div class="rv"><span>Step 1</span><h4>Pick a plan</h4><p>Pay on Stripe’s secure checkout. We never see your card.</p></div>
+      <div class="rv"><span>Step 2</span><h4>Set your password</h4><p>You land on your welcome page and get your login right away.</p></div>
+      <div class="rv"><span>Step 3</span><h4>Open Tube Search</h4><p>Web version on any computer, or the Windows app.</p></div>
+      <div class="rv"><span>Step 4</span><h4>Take the quiz</h4><p>About 60 seconds later you’re looking at your best niches. That’s it. You’re off.</p></div>
+    </div>
+    <details class="full auto" id="cmpT"><summary>Compare every feature, plan by plan</summary>
+      <table class="ft">
+        <thead><tr><th>Feature</th><th>Basic</th><th>Pro</th><th>Premiere</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td colspan="4">Find</td></tr>
+          <tr><td>Find my niche quiz + 9-step channel plan</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+          <tr><td>Niche Radar + Niche Scorecard</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+          <tr><td>Growing channel lists (long-form + Shorts, faceless + on camera)</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+          <tr><td>Hidden gem lists + CSV exports</td><td class="n">–</td><td class="y">✓</td><td class="y">✓</td></tr>
+          <tr class="grp"><td colspan="4">Plan</td></tr>
+          <tr><td>Viral ideas, saved ideas, Title lab</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+          <tr><td>Channel X-Ray + Blueprints (PDF)</td><td class="n">–</td><td class="y">✓</td><td class="y">✓</td></tr>
+          <tr><td>Live YouTube search + what viewers ask for</td><td class="n">–</td><td class="y">✓</td><td class="y">✓</td></tr>
+          <tr class="grp"><td colspan="4">Make</td></tr>
+          <tr><td>Video Launch Kit + Make my version</td><td class="n">–</td><td class="y">✓</td><td class="y">✓</td></tr>
+          <tr><td>Thumbnail Studio (91 templates, AI cut-out, tests)</td><td class="n">–</td><td class="y">✓</td><td class="y">✓</td></tr>
+          <tr class="grp"><td colspan="4">Grow</td></tr>
+          <tr><td>Earnings calculator, 30-day launch, weekly report</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+          <tr class="grp"><td colspan="4">People &amp; training</td></tr>
+          <tr><td>Creator Community, live webinars, team chat</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+          <tr><td>Faceless YouTube channel course</td><td class="n">–</td><td class="n">–</td><td class="y">✓</td></tr>
+          <tr><td>2 live coaching calls a month</td><td class="n">–</td><td class="n">–</td><td class="y">✓</td></tr>
+        </tbody>
+      </table>
+    </details>
+    <p class="fine rv">By continuing to checkout you agree to our <a href="terms.html">Terms</a>, <a href="privacy.html">Privacy Policy</a> and <a href="refunds.html">Refund Policy</a>. Plans renew every month at the price shown until you cancel, which you can do any time from your account. Prices in US dollars; taxes may apply. Secure checkout by Stripe opens in a new tab. Tools are always being improved, so exactly which plan includes what may change over time.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" style="padding-top:40px">
+  <div class="wrap center"><span class="chap">Questions</span><h2 class="h2" style="margin-top:18px"><span class="ln"><span>Straight </span></span><span class="ln"><span class="magtxt">answers</span></span></h2></div>
+  <div class="wrap"><div class="faq">
+    <details class="q rv"><summary>I’ve never made a YouTube video. Is this for me?</summary><div class="a"><p>Yes. Honestly, beginners usually get the most out of it, because you get to skip the part where you make 30 videos in the wrong niche. Ouch. The quiz picks your niche, the 9-step plan walks you through it, and the Community and live calls are there when you get stuck.</p></div></details>
+    <details class="q rv"><summary>I already have a channel. Will it still help?</summary><div class="a"><p>That’s where the Pro tools shine. X-Ray your competitors, run Channel Doctor on your own channel, follow a weekly growth plan, and use Sponsor Finder to see who’s paying channels your size.</p></div></details>
+    <details class="q rv"><summary>Is it only for faceless channels?</summary><div class="a"><p>Nope. There’s a whole side for on-camera creators: channels to learn from, Channels like mine, a script coach, a teleprompter and a face thumbnail lab.</p></div></details>
+    <details class="q rv"><summary>Will this make me money?</summary><div class="a"><p>We can’t promise that. And anybody who does is fibbing. Tube Search helps you pick better topics and make better videos. Your results depend on you, your effort and plenty of things nobody controls. Any earnings shown are estimates. Read our <a href="earnings-disclaimer.html">earnings disclaimer</a>.</p></div></details>
+    <details class="q rv"><summary>Isn’t copying other channels a bad idea?</summary><div class="a"><p>Copying videos is a terrible idea, and we say so constantly. (Like, annoyingly often.) We show you the format: the kind of topic, the title style, the length, the posting pace. Your videos are your own.</p></div></details>
+    <details class="q rv"><summary>What’s in the training and community?</summary><div class="a"><p>Every plan gets the Creator Community (feed, chat, wins, Q&amp;A), live webinars and a team in the chat. Premiere adds the faceless YouTube channel course, Premiere-only lessons and two live coaching calls a month.</p></div></details>
+    <details class="q rv"><summary>What computer do I need?</summary><div class="a"><p>There’s a Windows app, and a web version that works in any modern browser on Mac, iPad and Chromebook.</p></div></details>
+    <details class="q rv"><summary>Where does the data come from?</summary><div class="a"><p>Public YouTube channel and video information, gathered and checked every week. Earnings and some other numbers are estimates and labeled that way. Tube Search isn’t made by, or connected to, YouTube or Google.</p></div></details>
+    <details class="q rv"><summary>Can I cancel, or get a refund?</summary><div class="a"><p>Cancel any time from your account. And if it’s not for you, email us within 30 days of your first payment for a refund of that payment. Details in our <a href="refunds.html">refund policy</a>.</p></div></details>
+  </div></div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="glow"></div>
+  <div class="wrap" style="position:relative">
+    <span class="yt-cap">Made from real channels on our list</span>
+    <canvas class="yturn" id="yturn" role="img" aria-label="Your turn"></canvas>
+    <h2 class="glow-t after-yt"><span class="ln"><span>Stop <s class="xo">guessing</s>.</span></span><span class="ln"><span class="magtxt">Start knowing.</span></span></h2>
+    <div class="ctas rv"><a class="btn btn-b" href="#pricing">Get Tube Search <span class="arr">→</span></a><a class="btn btn-g" href="#demo" data-video>Watch the demo</a></div>
+    <div class="ps">
+      <p class="rv"><b>P.S.</b> If you skipped straight to the bottom (I see you, I do it too), here’s the short version: Tube Search shows you which small channels are blowing up, why they’re working, and how to make your own version. Plus training, a community and live calls so you actually do it. <mark class="hl">From $20 a month. Cancel whenever.</mark></p>
+      <p class="rv"><b>P.P.S.</b> Not sure which plan? Start with Basic and move up when you’re ready. Nobody’s keeping score. (Except the badges. The badges are absolutely keeping score.)</p>
+      <p class="rv"><b>P.P.P.S.</b> Every number on this page comes from our weekly data. Earnings are estimates, and your results depend on you. We’d rather tell you that now than have you find out later.</p>
+    </div>
+  </div>
+</section>
+<!-- END SCREEN: the video just ended -->
+<section class="endscr" id="endscreen" aria-label="What to do next">
+  <div class="es-rays" aria-hidden="true"></div><div class="es-orbit" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="bw" id="bw">
+      <div class="bw-tabs"><div class="bw-tab"><span class="bw-fav"><svg viewBox="0 0 24 24"><path d="M7 4l14 8-14 8z"/></svg></span><span class="bw-tt">Your channel · Tube Search</span><span class="bw-x" aria-hidden="true">×</span></div><span class="bw-plus" aria-hidden="true">+</span><span class="bw-sp"></span><span class="bw-win" aria-hidden="true"><i class="mn"></i><i class="mx"></i><i class="cl"></i></span></div>
+      <div class="bw-bar"><span class="bw-nav" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><svg viewBox="0 0 24 24" class="off"><path d="M9 5l7 7-7 7"/></svg><svg viewBox="0 0 24 24"><path d="M19 12a7 7 0 1 1-2-5M19 4v4h-4"/></svg></span>
+        <div class="bw-url"><svg class="bw-lock" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span id="bwUrl" aria-label="tubesearch.app">tubesearch.app</span><i class="bw-caret" aria-hidden="true"></i><svg class="bw-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></div>
+        <span class="bw-me" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4l14 8-14 8z"/></svg></span></div>
+      <div class="bw-load" aria-hidden="true"><i></i></div>
+      <div class="bw-page">
+        <div class="bw-head"><a class="bw-logo" href="#top"><span><svg viewBox="0 0 24 24"><path d="M7 4l14 8-14 8z"/></svg></span>Tube Search</a><div class="bw-search" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>Search any niche or channel</div><a class="btn btn-b bw-go" href="#pricing">Get started</a></div>
+        <div class="bw-grid">
+          <div class="bw-main">
+    <div class="yp" id="yp">
+      <div class="yp-wall" aria-hidden="true"><div class="yp-wg"></div></div>
+      <div class="yp-top"><span class="yp-av"><svg viewBox="0 0 24 24"><path d="M7 4l14 8-14 8z"/></svg></span><div><b>Tube Search</b><small>Copy what’s already working</small></div></div>
+      <div class="yp-main">
+        <div class="yp-next">
+          <span class="yp-lbl" id="ypLbl">Up next</span>
+          <a class="yp-card" href="#pricing" aria-label="Up next: your channel. Go to pricing">
+            <span class="yp-thumb"><span class="yp-tbg"></span><svg class="yp-chart" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path id="ypLine" d="M0 92 L35 80 L60 84 L95 60 L120 66 L150 34 L200 6" fill="none" stroke="#5EEAD4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M186 4 L200 6 L194 19" fill="none" stroke="#5EEAD4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="yp-tt"><em>Your</em> channel</span><span class="yp-badge">Starring you</span><span class="yp-new">NEW</span></span>
+            <span class="yp-ring" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" class="bgc"/><circle cx="50" cy="50" r="44" class="fgc" id="ypRing"/></svg><i></i></span>
+          </a>
+          <h3 class="yp-ttl">Your channel. The one that actually grows.</h3>
+          <p class="yp-meta" id="ypMeta">Starts with a 60-second quiz · then a plan, made for you</p>
+          <div class="yp-act"><button class="btn btn-g yp-cancel" id="ypCancel" type="button">Cancel</button><a class="btn btn-b" href="#pricing">Play now <span class="arr">→</span></a></div>
+        </div>
+        <div class="yp-side">
+          <span class="yp-lbl">Watch next</span>
+          <a class="yp-v" href="#demo" data-video><span class="yp-vt"><img src="media/claude-demo.jpg" alt="" loading="lazy"><span class="yp-dur">DEMO</span></span><span class="yp-vb"><b>Tube Search in action</b><small>The real app, start to finish</small></span></a>
+          <a class="yp-v" href="#guess"><span class="yp-vt"><img id="ypGuess" src="https://i.ytimg.com/vi/aT9KKgyRhKM/mqdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="yp-dur">GAME</span></span><span class="yp-vb"><b>Which one got more views?</b><small>3 rounds · real videos</small></span></a>
+          <a class="yp-v" href="#packs"><span class="yp-vt"><img src="img/app/bp_belowmap.webp" alt="" loading="lazy"><span class="yp-dur">5 CARDS</span></span><span class="yp-vb"><b>Open a pack of real channels</b><small>Feeling lucky?</small></span></a>
+        </div>
+      </div>
+      <div class="yp-ctl" aria-hidden="true"><div class="yp-prog"><i></i><b></b></div><div class="yp-row"><a class="yp-rp" href="#top" aria-label="Watch again from the top"><svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z"/></svg></a><span>Your turn</span><span class="yp-sp"></span><span class="yp-cc">CC</span><span class="yp-cc">HD</span></div></div>
+    </div>
+    <div class="yp-under">
+      <div class="yp-chan"><span class="yp-av sm"><svg viewBox="0 0 24 24"><path d="M7 4l14 8-14 8z"/></svg></span><div><b>Tube Search</b><small>by AI Creators &amp; Builders</small></div>
+        <a class="yp-sub" href="#pricing"><svg class="bell" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a2.5 2.5 0 0 0 2.4-2h-4.8a2.5 2.5 0 0 0 2.4 2zm7-6V11a7 7 0 0 0-5-6.7V3.5a2 2 0 0 0-4 0v.8A7 7 0 0 0 5 11v5l-2 2v1h18v-1z"/></svg>Subscribe<small>from $20/mo</small></a></div>
+      <div class="yp-btns"><button class="yp-like" id="ypLike" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21h4V9H2zm20-11a2 2 0 0 0-2-2h-6.3l1-4.6v-.3a1.5 1.5 0 0 0-.4-1L13.2 1 6.6 7.6A2 2 0 0 0 6 9v10a2 2 0 0 0 2 2h9a2 2 0 0 0 1.8-1.2l3-7.1A2 2 0 0 0 22 12z"/></svg><span>Like</span></button><button class="yp-share" id="ypShare" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9V5l7 7-7 7v-4.1c-5 0-8.5 1.6-11 5.1 1-5 4-10 11-11z"/></svg><span>Share</span></button></div>
+    </div>
+          </div>
+          <aside class="bw-side" aria-label="Real breakout videos">
+            <div class="bw-chips" aria-hidden="true"><b class="on">All</b><b>Breakouts</b><b>Faceless</b><b>On camera</b></div>
+            <div class="bw-list" id="bwList"></div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div class="foot">
+    <div><a class="logo" href="#top"><b><svg viewBox="0 0 24 24"><path d="M7 4l14 8-14 8z"/></svg></b>Tube Search</a><p>Made by AI Creators &amp; Builders. Find what’s working on YouTube, then make your own version.</p></div>
+    <div><h5>Product</h5><a href="#ch1">How it works</a><a href="#get">What you get</a><a href="#oncam">On camera</a><a href="#community">Community</a><a href="#pricing">Pricing</a></div>
+    <div><h5>Account</h5><a href="#pricing">Sign up</a><a data-m="/login" href="https://tubesearch-members.tubesearch.workers.dev/login">Log in</a><a data-m="/account" href="https://tubesearch-members.tubesearch.workers.dev/account">My account</a></div>
+    <div><h5>Legal</h5><a href="terms.html">Terms of service</a><a href="privacy.html">Privacy policy</a><a href="refunds.html">Refunds &amp; cancellation</a><a href="earnings-disclaimer.html">Earnings disclaimer</a><a href="affiliate-disclosure.html">Affiliate disclosure</a></div>
+  </div>
+  <div class="legal-note">
+    <p>© <span data-year>2026</span> Tube Search, made by AI Creators &amp; Builders. All rights reserved. Tube Search is not affiliated with, endorsed by or sponsored by YouTube or Google LLC. YouTube is a trademark of Google LLC. Channel stats shown on this site come from Tube Search’s weekly data; the cards at the top show those channels’ real YouTube thumbnails, loaded straight from YouTube.</p>
+    <p>Earnings disclaimer: we make no promise that you’ll earn any money. Results depend on many things, including your effort, skill and market conditions. Numbers on this site and in the app are estimates or examples, not typical results or guarantees. <a href="earnings-disclaimer.html">Read the full disclaimer</a>.</p>
+  </div>
+</div></footer>
+
+<div class="sticky"><a class="btn btn-b" href="#pricing">Get Tube Search · from $20/month</a></div>
+<div class="modal" aria-hidden="true" role="dialog" aria-label="Tube Search demo video" id="demo">
+  <button class="x" aria-label="Close the video">✕</button>
+  <div class="box"><video src="media/claude-demo.mp4" poster="media/claude-demo.jpg" controls playsinline preload="none"></video></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="js/data.js?v=4x" defer></script>
+<script src="js/site.js?v=4x" defer></script>
+<script src="js/v4.js?v=4x"></script>
+</body>
+</html>
